@@ -39,7 +39,7 @@ export default function Stats(props) {
 
 function getMaxLanguageSize(stats) {
     if(stats instanceof Array) {
-        return Math.max(stats.map(language => language.size))
+        return Math.max(...stats.map(language => language.size))
     } else {
         return 0
     }
