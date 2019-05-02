@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import getLanguageStats from './getLanguageStats'
-import LanguageGraphBar from './components/LanguageGraphBar'
+import getLanguageStats from '../getLanguageStats'
+import LanguageGraphBar from './LanguageGraphBar'
 
 export default function Stats(props) {
     const [stats, setStats] = useState()
