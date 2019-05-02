@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React from 'react'
+import Stats from './Stats'
 import './App.css';
 
 function App() {
+  const [username, setUsername] = React.useState('')
+  // Keep an extra variable for the current value of the input,
+  // based on which the value passed to the Stats component updates _only_ when clicking on the button
+  const [inputValue, setInputValue] = React.useState(username)
+  const changeInputValue = (event) => {
+    setInputValue(event.target.value)
+  }
+  const changeUsername = async () => {
+    setUsername(inputValue)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input type="text" value={inputValue} onChange={changeInputValue}></input>
+      <button onClick={changeUsername}>Get</button>
+      <Stats username={username}/>
     </div>
   );
 }
