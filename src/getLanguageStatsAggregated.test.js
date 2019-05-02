@@ -7,7 +7,7 @@ describe('getLanguageStatsAggregated', () => {
     // We get an array back
     expect(stats instanceof Array).toBe(true)
     // The array is alphabetically sorted after the `name` property
-    expect(isAlphabeticallySortedByKey(stats, 'name'))
+    expect(isAlphabeticallySortedByKey(stats, 'name')).toBe(true)
   })
 })
 
