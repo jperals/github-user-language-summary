@@ -8,7 +8,7 @@ export default async (username) => {
   const aggregatedLanguageSizeByName = {}
   const requests = []
   for (const repo of userRepos) {
-    if (!(repo && repo.languages_url)) {
+    if (!(repo && repo.languages_url && !repo.fork)) {
       continue
     }
     requests.push(get(repo.languages_url))
@@ -25,8 +25,8 @@ export default async (username) => {
           name: key,
           size: aggregatedLanguageSizeByName[key]
         }
-      }
-      ).sort((a, b) => a.size < b.size)
+      })
+      sortedStats.sort((a, b) => b.size - a.size)
       return sortedStats
     })
 }

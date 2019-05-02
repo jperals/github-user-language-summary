@@ -9,13 +9,13 @@ describe('getLanguageStats', () => {
     // We get an array back
     expect(stats).toBeInstanceOf(Array)
     // The array is alphabetically sorted after the `size` property
-    expect(isAlphabeticallySortedByKey(stats, 'size')).toBe(true)
+    expect(isSortedByKey(stats, 'size')).toBe(true)
   })
 })
 
-function isAlphabeticallySortedByKey(array, key) {
+function isSortedByKey(array, key) {
   for(let i = 1; i < array.length; i++) {
-    if (array[i - 1][key] > array[i][key]) {
+    if (array[i - 1][key] < array[i][key]) {
       return false
     }
   }
