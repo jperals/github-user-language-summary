@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 
 export default function LanguageGraphBar(props) {
     const scale = props.size / props.max
-    console.log(props.max, scale)
     const barStyle = {
         left: 0,
         top: 0,
