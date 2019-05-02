@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import getLanguageStats from '../getLanguageStats'
-import LanguageGraphBar from './LanguageGraphBar'
+import getLanguageStats from './getLanguageStats'
+import LanguageGraph from './components/LanguageGraph'
 
 export default function Stats(props) {
     const [stats, setStats] = useState()
@@ -25,22 +25,9 @@ export default function Stats(props) {
     )
 
     if(stats instanceof Array) {
-        const maxLanguageSize = getMaxLanguageSize(stats)
-        return stats.map(language => {
-            return (
-                <LanguageGraphBar key={language.name} name={language.name} size={language.size} max={maxLanguageSize} />
-                )
-        })
+        return <LanguageGraph stats={stats} />
     } else if(isLoading) {
         return 'Loading...'
     }
     return ''
-}
-
-function getMaxLanguageSize(stats) {
-    if(stats instanceof Array) {
-        return Math.max(...stats.map(language => language.size))
-    } else {
-        return 0
-    }
 }
