@@ -19,14 +19,14 @@ export default async (username) => {
       for (const dataSet of resultsArray) {
         combineLanguages(aggregatedLanguageSizeByName, dataSet)
       }
-      // A key-value object was convenient for aggregating the data, but we prefer to return an array, sorted by the language name.
-      const sortedStats = Object.keys(aggregatedLanguageSizeByName).sort().map(key => {
+      // A key-value object was convenient for aggregating the data, but we prefer to return an array, sorted by the language size.
+      const sortedStats = Object.keys(aggregatedLanguageSizeByName).map(key => {
         return {
           name: key,
           size: aggregatedLanguageSizeByName[key]
         }
       }
-      )
+      ).sort((a, b) => a.size < b.size)
       return sortedStats
     })
 }

@@ -8,8 +8,8 @@ describe('getLanguageStats', () => {
     expect.assertions(2)
     // We get an array back
     expect(stats).toBeInstanceOf(Array)
-    // The array is alphabetically sorted after the `name` property
-    expect(isAlphabeticallySortedByKey(stats, 'name')).toBe(true)
+    // The array is alphabetically sorted after the `size` property
+    expect(isAlphabeticallySortedByKey(stats, 'size')).toBe(true)
   })
 })
 
