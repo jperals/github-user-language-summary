@@ -12,7 +12,7 @@ export default function LanguageGraphBar(props) {
         transformOrigin: 'left center'
     }
     return props.name && !isNaN(props.size) && (
-        <div className="relative">
+        <div className="relative mb2">
             <div className="absolute" style={barStyle}></div>
             <div className="relative">
                 <span>{props.name}&nbsp;</span>
