@@ -1,15 +1,14 @@
-import React, {useEffect, useState} from 'react'
-const getLanguageStatsAggregated = require('./getLanguageStatsAggregated')
+import React, { useEffect, useState } from 'react'
+import getLanguageStats from './getLanguageStats'
 
-export default function Stats (props) {
+export default function Stats(props) {
     const [stats, setStats] = useState()
 
     useEffect(
         () => {
-            if(!props.username) return
+            if (!props.username) return
             async function fetchData() {
-                console.log(props)
-                const newStats = await getLanguageStatsAggregated(props.username)
+                const newStats = await getLanguageStats(props.username)
                 setStats(newStats)
             }
             fetchData()
@@ -17,7 +16,7 @@ export default function Stats (props) {
         [props.username]
     )
 
-    return(
-        <span>{props.username}</span>
-    )
+    return stats instanceof Array && stats.map(language => {
+        return (<div key={language.name}><span>{language.name}</span><span>{language.size}</span></div>)
+    })
 }

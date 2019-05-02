@@ -1,8 +1,10 @@
-import getLanguageStatsAggregated from './getLanguageStatsAggregated'
+import getLanguageStats from './getLanguageStats'
 
-describe('getLanguageStatsAggregated', () => {
+describe('getLanguageStats', () => {
   it('should return language statistics for a user, aggregated from all the repos', async () => {
-    const stats = await getLanguageStatsAggregated(process.env.REACT_APP_TEST_GITHUB_USER)
+    // Increase default timeout as this request can take some time, especially for users with many repos.
+    jest.setTimeout(60000)
+    const stats = await getLanguageStats(process.env.REACT_APP_TEST_GITHUB_USER)
     expect.assertions(2)
     // We get an array back
     expect(stats).toBeInstanceOf(Array)
