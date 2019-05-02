@@ -5,7 +5,7 @@ describe('getLanguageStatsAggregated', () => {
     const stats = await getLanguageStatsAggregated(process.env.REACT_APP_TEST_GITHUB_USER)
     expect.assertions(2)
     // We get an array back
-    expect(stats instanceof Array).toBe(true)
+    expect(stats).toBeInstanceOf(Array)
     // The array is alphabetically sorted after the `name` property
     expect(isAlphabeticallySortedByKey(stats, 'name')).toBe(true)
   })
