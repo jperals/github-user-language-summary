@@ -24,10 +24,11 @@ export default function Stats(props) {
         [props.username]
     )
 
-    if(stats instanceof Array) {
-        return <LanguageGraph stats={stats} />
-    } else if(isLoading) {
+    if(isLoading) {
         return <div className="pl6-l">Loading...</div>
+    } else if(stats instanceof Array) {
+        return <LanguageGraph stats={stats} />
+    } else {
+        return ''
     }
-    return ''
 }
