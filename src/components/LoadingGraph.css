@@ -1,0 +1,15 @@
+.LoadingGraphBar {
+    transform-origin: left;
+    animation-name: scaleX;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes scaleX {
+    0% {
+        transform: scaleX(0)
+    }
+    100% {
+        transform: scaleX(1)
+    }
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import getLanguageStats from './getLanguageStats'
 import LanguageGraph from './components/LanguageGraph'
+import LoadingGraph from './components/LoadingGraph'
 
 export default function Stats(props) {
     const [stats, setStats] = useState()
@@ -24,9 +25,9 @@ export default function Stats(props) {
         [props.username]
     )
 
-    if(isLoading) {
-        return <div className="pl6-l">Loading...</div>
-    } else if(stats instanceof Array) {
+    if (isLoading) {
+        return <LoadingGraph></LoadingGraph>
+    } else if (stats instanceof Array) {
         return <LanguageGraph stats={stats} />
     } else {
         return ''
