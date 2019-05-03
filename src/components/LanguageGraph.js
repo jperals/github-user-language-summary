@@ -5,7 +5,7 @@ export default function LanguageGraph(props) {
     const maxLanguageSize = getMaxLanguageSize(props.stats)
     return props.stats.map(language => {
         return (
-            <LanguageGraphBar className="mb2" key={language.name} name={language.name} size={language.size} max={maxLanguageSize} />
+            <LanguageGraphBar key={language.name} name={language.name} size={language.size} max={maxLanguageSize} />
         )
     })
 }
