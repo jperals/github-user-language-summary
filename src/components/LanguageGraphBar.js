@@ -19,7 +19,7 @@ export default function LanguageGraphBar(props) {
             <div className="w4 tr">
                 <span className="mr2">{props.name}</span>
             </div>
-            <div className="flex-grow relative mr4" style={{flexGrow: 1}}>
+            <div className="flex-grow relative mr6" style={{flexGrow: 1}}>
                 <div className="absolute" style={barStyle}></div>
                 <div className="relative ml2" style={statsTextStyle}>
                     <span>{props.size} bytes</span>
