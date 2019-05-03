@@ -10,8 +10,13 @@ function App() {
   const changeInputValue = (event) => {
     setInputValue(event.target.value)
   }
-  const changeUsername = async () => {
+  const changeUsername = () => {
     setUsername(inputValue)
+  }
+  const handleKey = e => {
+    if(e.key === 'Enter') {
+      changeUsername()
+    }
   }
   return (
     <div className="App center mw7">
@@ -20,7 +25,7 @@ function App() {
         <p>Enter your username to generate programming language statistics about your GitHub profile.</p>
       </div>
       <div className="pl6-l pr6-l flex flex-row mb3">
-        <input type="text" value={inputValue} onChange={changeInputValue} className="block"></input>
+        <input type="text" value={inputValue} onChange={changeInputValue} onKeyUp={handleKey} className="block"></input>
         <button onClick={changeUsername} className="block">Get</button>
       </div>
       <Stats username={username} />
