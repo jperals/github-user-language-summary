@@ -27,7 +27,7 @@ export default function Stats(props) {
     if(stats instanceof Array) {
         return <LanguageGraph stats={stats} />
     } else if(isLoading) {
-        return 'Loading...'
+        return <div className="pl6-l">Loading...</div>
     }
     return ''
 }

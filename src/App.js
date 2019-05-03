@@ -14,10 +14,16 @@ function App() {
     setUsername(inputValue)
   }
   return (
-    <div className="App">
-      <input type="text" value={inputValue} onChange={changeInputValue}></input>
-      <button onClick={changeUsername}>Get</button>
-      <Stats username={username}/>
+    <div className="App center mw7">
+      <div className="pl6-l pr6-l">
+        <h1>GitHub language summary</h1>
+        <p>Enter your username to generate programming language statistics about your GitHub profile.</p>
+      </div>
+      <div className="pl6-l pr6-l flex flex-row mb3">
+        <input type="text" value={inputValue} onChange={changeInputValue} className="block"></input>
+        <button onClick={changeUsername} className="block">Get</button>
+      </div>
+      <Stats username={username} />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 export default function LanguageGraphBar(props) {
     const scale = props.size / props.max
@@ -15,11 +15,11 @@ export default function LanguageGraphBar(props) {
         left: 100 * scale + '%'
     }
     return props.name && !isNaN(props.size) && (
-        <div className="cf mb3">
-            <div className="fl w-20 tr">
+        <div className="flex flex-row mb3">
+            <div className="w4 tr">
                 <span className="mr2">{props.name}</span>
             </div>
-            <div className="fl w-80 relative">
+            <div className="flex-grow relative mr4" style={{flexGrow: 1}}>
                 <div className="absolute" style={barStyle}></div>
                 <div className="relative ml2" style={statsTextStyle}>
                     <span>{props.size} bytes</span>
