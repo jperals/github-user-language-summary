@@ -1,5 +1,15 @@
 ![Demo animation](./gh-language-summary.gif)
 
+## Setup
+
+After cloning this project, create a new file named `.env` at the root directory containing a Github token, like:
+
+```
+REACT_APP_GITHUB_API_TOKEN=your_github_api_token_here
+```
+
+(You can copy this file from `.env.example`).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

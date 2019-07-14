@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const axiosInstance = axios.create({
     headers: {
-        Authorization: `token ${process.env.REACT_APP_GITHUB_GRAPHQL_API_TOKEN}`
+        Authorization: `token ${process.env.REACT_APP_GITHUB_API_TOKEN}`
     }
 })
 

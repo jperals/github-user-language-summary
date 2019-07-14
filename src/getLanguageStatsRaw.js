@@ -1,6 +1,6 @@
 const graphql = require('@octokit/graphql').defaults({
   headers: {
-    authorization: `token ${process.env.REACT_APP_GITHUB_GRAPHQL_API_TOKEN}`
+    authorization: `token ${process.env.REACT_APP_GITHUB_API_TOKEN}`
   }
 })
 
