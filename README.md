@@ -31,6 +31,12 @@ Open [http://localhost:6060](http://localhost:6060) to view it in the browser.
 
 The page will reload if you make edits to any component.
 
+### `npm run e2e`
+
+Opens the [Cypress](https://www.cypress.io) app for end-to-end testing.<br>
+The tests for this app are inside `cypress/integration/git-summary`.
+Inside the Cypress app, you can find them under the `git-summary` directory.
+
 ### `npm test`
 
 Launches the unit test runner in the interactive watch mode.<br>
