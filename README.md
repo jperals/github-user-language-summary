@@ -2,6 +2,8 @@
 
 ## Setup
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 After cloning this project, create a new file named `.env` at the root directory containing a Github token, like:
 
 ```
@@ -9,8 +11,6 @@ REACT_APP_GITHUB_API_TOKEN=your_github_api_token_here
 ```
 
 (You can copy this file from `.env.example`).
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -33,7 +33,7 @@ The page will reload if you make edits to any component.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
+Launches the unit test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
