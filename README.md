@@ -10,7 +10,7 @@ After cloning this project, create a new file named `.env` at the root directory
 REACT_APP_GITHUB_API_TOKEN=your_github_api_token_here
 ```
 
-(You can copy this file from `.env.example`).
+(You can copy this file from `.env.example` and then modify it accordingly).
 
 ## Available Scripts
 
